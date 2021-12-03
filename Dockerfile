@@ -11,6 +11,7 @@ COPY ./package*.json ./
 COPY . .
 
 RUN touch crontab.tmp \
+#TODO add 2>> to stdterr for console.error()
     && echo ' */5 * * * * cd /usr/src/app && npm start >> /var/log/cron.log' > crontab.tmp \
     && crontab crontab.tmp \
     && rm -rf crontab.tmp \

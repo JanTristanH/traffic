@@ -8,6 +8,9 @@ das ist die url von eisdorf nach hamburg, die coordinaten sind reverses im vergl
 die karte dazu:
     https://verkehr.autobahn.de/web/main/karte/?start=53.5605155,10.0506020&target=51.7596378,10.1730109
 
+# lookup ur desired coordiantes here
+https://www.latlong.net/
+
 
 # How to start
 ## run this command to start script

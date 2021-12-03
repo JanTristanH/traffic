@@ -23,7 +23,7 @@ const fieldListRoutes = "location_from,location_to,duration,distance,traveltimeL
 
 
 
-let persist = (data, coordinates) => {
+let persist = (data, location) => {
     return new Promise((resolve, reject) => {
 
 
@@ -33,7 +33,7 @@ let persist = (data, coordinates) => {
                 conn = await pool.getConnection();
 
                 const res = await conn.query(`INSERT IGNORE INTO ${tableNameRoutes}(${fieldListRoutes}) VALUES (${getPlacerholderQuestionmarks(fieldListRoutes)})`, array);
-                console.log("affected Rows: ", res.affectedRows);
+              //  console.log("affected Rows: ", res.affectedRows);
                 resolve(data);
 
             } catch (err) {
@@ -44,9 +44,7 @@ let persist = (data, coordinates) => {
             }
         }
 
-        //von Hamburg nach eisdorf
-        //TODO make this smarter
-        asyncFunction([1, 2, data.routes[0].duration, data.routes[0].distance, data.traveltimeLoss])
+        asyncFunction([location.fromId, location.toId, data.routes[0].duration, data.routes[0].distance, data.traveltimeLoss])
 
 
     })

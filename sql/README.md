@@ -1,8 +1,13 @@
-# Create tables
+# units
+duration in seconds
+distance in meters
+traveltimeLoss in seconds
+    
+## Create tables
 ```
 
 CREATE TABLE `traffic`.`location` (
-     `id` INT NOT NULL AUTO_INCREMENT ,
+     `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT ,
      `geo_lon` DOUBLE NOT NULL ,
      `geo_lat` DOUBLE NOT NULL ,
      `name` VARCHAR(32) NOT NULL ,
@@ -12,14 +17,14 @@ INSERT INTO `location` (`id`, `geo_lon`, `geo_lat`, `name`) VALUES (NULL, '10.05
 INSERT INTO `location` (`id`, `geo_lon`, `geo_lat`, `name`) VALUES (NULL, '10.1730109', '51.7596378', 'Eisdorf');
 
 CREATE TABLE `traffic`.`traveltime` (
-     `id` INT NOT NULL AUTO_INCREMENT ,
-      `location_from` INT NOT NULL ,
-       `location_to` INT NOT NULL ,
-        `duration` DOUBLE NOT NULL ,
-         `distance` DOUBLE NOT NULL ,
-          `traveltimeLoss` DOUBLE NOT NULL ,
-           `timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
-            PRIMARY KEY (`id`)) ENGINE = InnoDB;
+    `id` INT NOT NULL AUTO_INCREMENT ,
+    `location_from` INT NOT NULL ,
+    `location_to` INT NOT NULL ,
+    `duration` DOUBLE NOT NULL ,
+    `distance` DOUBLE NOT NULL ,
+    `traveltimeLoss` DOUBLE NOT NULL ,
+    `timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+    PRIMARY KEY (`id`)) ENGINE = InnoDB;
 
 TODO: fremdschlüssel
 
