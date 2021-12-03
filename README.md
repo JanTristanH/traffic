@@ -12,3 +12,9 @@ die karte dazu:
 # How to start
 ## run this command to start script
 'node -r dotenv/config index.js dotenv_config_path=./.env'
+
+## Docker image
+## build
+`docker build -t traffic .`
+## run
+`docker run traffic`
